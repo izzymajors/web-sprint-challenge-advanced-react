@@ -99,7 +99,7 @@ test("displays plants in cart", () => {
 
   ...
 
-})
+}) 
 ```
 
 ### Reference Materials
