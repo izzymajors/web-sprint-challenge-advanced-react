@@ -14,6 +14,6 @@ const useForm =(initialValues) => {
 
 
     return [values, handleChanges];
-}
+};
 
 export default useForm;
