@@ -1,7 +1,26 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { handlers } from "../mocks/handlers";
 
-export default class PlantList extends Component {
+export default class PlantList extends React.Component {
+  state = {
+    plants:[],
+    
+  };
+
+
+  componentDidMount() {
+    axios
+    .get('http://localhost:3333/plants')
+    .then((res) => {
+      //res.data.plantsData
+      this.setState({
+        plants: res.data.plantsData,
+      });
+    })
+    .catch((err) => console.log(err));
+  
+  }
   // add state with a property called "plants" - initialize as an empty array
 
   // when the component mounts:
@@ -37,3 +56,6 @@ export default class PlantList extends Component {
     );
   }
 }
+
+
+ 
